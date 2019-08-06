@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Slide Test</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div id="slide1" class="slide">
+        <div class="slideFloor">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="goton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!---------------------------------------->
+    <div id="slide2" class="slide">
+        <div class="slideFloor">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="goton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!---------------------------------------->
+
+    <div id="slide3" class="slide">
+        <div class="slideFloor">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="goton">
+            <div>Tab1</div>
+            <div>Tab2</div>
+            <div>Tab3</div>
+        </div>
+    </div>
+
+
+    <script src="Slide.js"></script>
+    <script>
+
+        new Banner({
+            slidebox: "#slide1",
+            Goton: "#slide1 .goton",
+
+        })
+
+        new Banner({
+            slidebox: "#slide2",
+            Goton: "#slide2 .goton",
+            direction: 1
+        })
+
+        new Tab({
+            slidebox: "#slide3",
+            Goton: "#slide3 .goton",
+            active: "active"
+        })
+
+        let createRandom = (a, b) => {
+            return Math.floor(Math.random() * (b + 1 - a) + a);
+        };
+        let dom = document.querySelectorAll(".slideFloor div");
+        for (const key in dom) {
+            if (dom.hasOwnProperty(key)) {
+                const element = dom[key];
+                element.style.background = `rgb(${createRandom(0, 255)},${createRandom(0, 255)},${createRandom(0, 255)})`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

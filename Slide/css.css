@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.slide {
+    margin: 50px auto;
+}
+
+.slide {
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide .slideFloor {
+    height: 100%;
+    display: flex;
+    font-size: 100px;
+    transition: 1s all cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slide .slideFloor > div {
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+.slide .goton {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+}
+.slide .goton > div {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/****************************/
+
+#slide2 .slideFloor {
+    flex-direction: column;
+}
+/***************************************************/
+#slide3 .slideFloor > div {
+    display: none;
+}
+#slide3 .slideFloor > div.active {
+    padding-top: 50px;
+    display: block;
+    animation: ani 0.5s;
+}
+@keyframes ani {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#slide3 .goton {
+    bottom: 100%;
+    height: 50px;
+    justify-content: flex-start;
+    transform: translateY(100%);
+    background: #ccc;
+}
+#slide3 .goton > div {
+    margin: 0;
+    width: 100px;
+    height: 100%;
+    margin-right: 5px;
+    border-right: 1px black solid;
+    border-radius: 0;
+    background: #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+/************************************/
